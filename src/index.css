@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+    }
+
+    html {
+        @apply m-xs:text-[80%] overflow-auto;
+        box-sizing: border-box;
+    }
+
+    body {
+        @apply pt-20 py-10 px-8 text-md leading-1.6 font-regular text-center bg-[url('./assets/bg-intro-mobile.png')] lg:bg-[url('./assets/bg-intro-desktop.png')] bg-red overflow-auto;
+        font-family: "Poppins", sans-serif;
+    }
+
+    input {
+        @apply pl-4 pr-16 lg:pl-8 lg:pr-24 py-3 w-full text-sm font-semi-bold text-black border border-grayish-blue focus:border-blue focus-visible:border-blue focus:outline-none focus-visible:outline-none rounded-md placeholder:text-dark-blue/70 placeholder:font-semi-bold;
+    }
+
+    a {
+        @apply focus-visible:outline-none supports-[not_selector(:focus-visible)]:focus:outline-none focus-visible:ring-2 supports-[not_selector(:focus-visible)]:focus:ring-2 ring-blue transition-opacity;
+    }
+
+    .attribution a {
+        @apply text-dark-blue;
+    }
+
+    @media (hover: hover) {
+        a:hover {
+            @apply opacity-80;
+        }
+
+        .submit-btn:hover {
+            @apply bg-green/70;
+        }
+    }
+}
